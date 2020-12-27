@@ -1,5 +1,9 @@
+// Replace with your network credentials
+#define WIFI_SSID        "SSID"
+#define WIFI_PASSWORD    "PASSWORD"
+#define ARDUINO_HOSTNAME "HOSTNAME"
 
-
+#include <Arduino.h>
 // Import required libraries
 #if defined ARDUINO_ARCH_ESP32 || ESP32 || ARDUINO_ESP32_DEV
   #include <WiFi.h>
@@ -17,13 +21,6 @@
 #include <JeVe_EasyOTA.h> v
 EasyOTA OTA;
 
-// Replace with your network credentials
-const char* ssid = "iot";
-const char* password = "qwertyui1234567890";
-#define WIFI_SSID        "iot"
-#define WIFI_PASSWORD    "qwertyui1234567890"
-#define ARDUINO_HOSTNAME "ota-flash-demo"
-
 // Create AsyncWebServer object on port 80
 AsyncWebServer server(80);
 
@@ -36,7 +33,7 @@ void setup(){
   Serial.begin(115200);
   
   // Connect to Wi-Fi
-  WiFi.begin(ssid, password);
+  WiFi.begin(WIFI_SSID, WIFI_PASSWORD);
 
   while (WiFi.status() != WL_CONNECTED) {
     delay(1000);
