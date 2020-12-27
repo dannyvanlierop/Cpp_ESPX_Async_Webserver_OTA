@@ -1,7 +1,6 @@
 # Cpp_ESPX_Async_Webserver_OTA
  ESP32 and ESP8266 Async Webserver with OTA
 
-
 [
     ![Open source](
         https://img.shields.io/badge/Open%20Source-Yes-green?style=plastic
